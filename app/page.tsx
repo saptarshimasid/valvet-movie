@@ -816,7 +816,56 @@ export default function Home() {
         <button className="ritual-cta" onClick={()=>go("booking")}>Make a night of it <ArrowUpRight size={19}/></button>
       </section>
       <section className="interlude pad" data-scroll-section><span className="stars">✦ &nbsp; ✦ &nbsp; ✦</span><span className="kicker ink">07 / THE LITTLE THINGS</span><blockquote data-reveal>“For a couple of hours,<br/>the world can <em>wait.</em>”</blockquote><div className="small-rule"/><p>GOOD STORIES. GREAT SEATS. BETTER NIGHTS.</p></section>
-      <section id="location" className="location pad" data-scroll-section><div><span className="kicker">08 / FIND US</span><h2 data-reveal>Meet us at<br/><em>the movies.</em></h2><p data-reveal>Your next night out is just around the corner.</p><div className="location-details" data-reveal><div><MapPin size={20}/> Velvet Cinema<br/>Kolkata, West Bengal</div><div><Clock3 size={20}/> Doors open daily<br/>10:30 AM – 11:30 PM</div></div><button className="location-link" onClick={()=>go("booking")}>Choose your show <ArrowUpRight size={20}/></button></div><div className="location-art" aria-hidden="true"><span>V</span></div></section>
+      <section id="location" className="location pad" data-scroll-section>
+        <div>
+          <span className="kicker">08 / FIND US</span>
+          <h2 data-reveal>Meet us at<br/><em>the movies.</em></h2>
+          <p data-reveal>Your next night out is just around the corner.</p>
+          <div className="location-details" data-reveal>
+            <div><MapPin size={20}/> Velvet Cinema<br/>Kolkata, West Bengal</div>
+            <div><Clock3 size={20}/> Doors open daily<br/>10:30 AM – 11:30 PM</div>
+          </div>
+          <button className="location-link" onClick={()=>go("booking")}>Choose your show <ArrowUpRight size={20}/></button>
+        </div>
+        <div className="location-art" aria-hidden="true">
+          <svg viewBox="0 0 500 500" className="location-art-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="locGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#7a3e2e" />
+                <stop offset="42%" stopColor="#552c20" />
+                <stop offset="78%" stopColor="#2e1b17" />
+                <stop offset="100%" stopColor="#252625" />
+              </radialGradient>
+              <radialGradient id="locGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#e57252" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#e57252" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+            {/* Background full circular disc */}
+            <circle cx="250" cy="250" r="236" fill="url(#locGrad)" />
+            <circle cx="250" cy="250" r="236" fill="url(#locGlow)" />
+            {/* Concentric rings - fully contained with margin */}
+            <circle cx="250" cy="250" r="236" fill="none" stroke="#e57252" strokeWidth="1" opacity="0.2" />
+            <circle cx="250" cy="250" r="215" fill="none" stroke="#e57252" strokeWidth="1.2" opacity="0.35" />
+            <circle cx="250" cy="250" r="185" fill="none" stroke="#e57252" strokeWidth="1.8" strokeDasharray="3 3" opacity="0.55" />
+            <circle cx="250" cy="250" r="180" fill="none" stroke="#e57252" strokeWidth="1.5" opacity="0.85" />
+            <circle cx="250" cy="250" r="140" fill="none" stroke="#e57252" strokeWidth="1" opacity="0.25" />
+            {/* V lettermark */}
+            <text
+              x="250"
+              y="322"
+              textAnchor="middle"
+              fontFamily="Georgia, 'Times New Roman', serif"
+              fontStyle="italic"
+              fontSize="230"
+              fill="#e57252"
+              style={{ filter: "drop-shadow(0 14px 35px rgba(0, 0, 0, 0.6))" }}
+            >
+              V
+            </text>
+          </svg>
+        </div>
+      </section>
     </main>
     <footer className="footer pad" data-scroll-section><div className="footer-top"><div><span className="kicker ink">THE BEST SEAT IS WAITING</span><h2>See you <em>there.</em></h2></div><button onClick={()=>go("booking")} aria-label="Book tickets"><ArrowUpRight size={32}/></button></div><div className="footer-bottom"><span className="logo"><b className="logo-icon">✦</b> VELVET<span>CINEMA</span></span><span>© 2026 VELVET CINEMA</span><button onClick={()=>go("top")}>BACK TO TOP ↑</button></div></footer>
   </div>
