@@ -157,8 +157,8 @@ const wordVariants = {
 };
 const singleWord = {
   hidden: { y: 80, opacity: 0, rotateX: 45 },
-  visible: { y: 0, opacity: 1, rotateX: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
-  exit: { y: -50, opacity: 0, transition: { duration: 0.35, ease: [0.55, 0, 1, 0.45] } },
+  visible: { y: 0, opacity: 1, rotateX: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
+  exit: { y: -50, opacity: 0, transition: { duration: 0.35, ease: [0.55, 0, 1, 0.45] as const } },
 };
 
 function AnimatedWords({ text, className }: { text: string; className?: string }) {
